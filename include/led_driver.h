@@ -10,7 +10,8 @@ public:
   void setBrightness(uint8_t brightness);
   void displayCommits(const uint8_t commits[]);
   void testPattern();
-  
+  void errorPattern();
+
 private:
   CRGB leds[NUM_LEDS];
 };
