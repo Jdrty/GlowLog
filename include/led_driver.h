@@ -3,7 +3,7 @@
 
 class LedDriver {
 public:
-  static const int NUM_LEDS = 30;
+  static const int NUM_LEDS = 32; 
   static const int DATA_PIN = D4;
   
   void initialize();
