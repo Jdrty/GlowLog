@@ -1,42 +1,69 @@
 #include <Arduino.h>
-
-#include <Arduino.h>
+#include "config_manager.h"
 #include "github_client.h"
+#include "led_driver.h"
 #include "time_utils.h"
 #include "commit_mapper.h"
-#include "led_driver.h"
 
-// WiFi & GitHub configuration
-const char* WIFI_SSID     = "your_wifi_ssid";
-const char* WIFI_PASSWORD = "your_wifi_password";
-const char* GITHUB_USERNAME = "your_github_username";
-const char* GITHUB_PAT      = "ghp_yourPAT"; // Keep this secret!
+// Use the .env macro for GitHub username if defined, otherwise fallback
+#ifndef GITHUB_USERNAME
+#define GITHUB_USERNAME "Jdrty"
+#endif
 
-// Global instances
+// Instantiate global objects
+ConfigManager configManager;
 GitHubClient githubClient;
 LedDriver ledDriver;
-uint8_t commitData[30] = {0};
+
+const char* githubUsername = GITHUB_USERNAME; // Set from .env or fallback
+
+// Array to hold commit counts for the last 32 days
+uint8_t commits[32];
 
 void setup() {
   Serial.begin(115200);
-  ledDriver.initialize();
+  delay(1000);
+  Serial.println("GlowLog starting...");
 
-  if (!githubClient.initialize(WIFI_SSID, WIFI_PASSWORD)) {
-    Serial.println("WiFi Failed!");
-    while (1) delay(1000);
-  }
-  
+  // Load configuration from EEPROM (WiFi credentials and GitHub PAT)
+  configManager.loadConfig();
+  Serial.println("Config loaded.");
+
+  // Initialize LED driver (WS2812B LEDs)
+  ledDriver.initialize();
+  Serial.println("LEDs initialized.");
+
+  // Initialize time utilities (NTP synchronization)
   TimeUtils::initialize();
+  Serial.println("Time utilities initialized.");
+
+  // Connect to WiFi using stored credentials
+  Serial.println("Connecting to WiFi...");
+  if (!githubClient.initialize(configManager.getWiFiSSID(), configManager.getWiFiPass())) {
+    Serial.println("WiFi connection failed!");
+    ledDriver.errorPattern();
+    return;
+  }
+  Serial.println("WiFi connected.");
+
+  // Fetch commit data from GitHub
+  Serial.println("Fetching commit data...");
+  if (!githubClient.fetchCommitData(commits, githubUsername, configManager.getGitHubPAT())) {
+    Serial.println("Failed to fetch commit data!");
+    ledDriver.errorPattern();
+    return;
+  }
+  Serial.println("Commit data fetched.");
+
+  // Normalize raw commit counts to brightness values
+  CommitMapper::normalizeBrightness(commits);
+
+  // Display commit data on the LED strip
+  ledDriver.displayCommits(commits);
+  Serial.println("Displayed commit data on LEDs.");
 }
 
 void loop() {
-  // Use the username in the GitHub client call
-  if (githubClient.fetchCommitData(commitData, GITHUB_USERNAME, GITHUB_PAT)) {
-    CommitMapper::normalizeBrightness(commitData);
-    ledDriver.displayCommits(commitData);
-    delay(3600000); // 1 hour between updates
-  } else {
-    ledDriver.errorPattern();
-    delay(300000); // Retry after 5 minutes
-  }
+  // Optionally, refresh commit data periodically (e.g., every hour)
+  // For now, the sketch runs once after startup.
 }

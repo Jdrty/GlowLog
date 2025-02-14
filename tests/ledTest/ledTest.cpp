@@ -9,16 +9,19 @@
 
 CRGB leds[NUM_LEDS];
 
+// Theater-style crawling lights function declaration
+void theaterChase(CRGB color, int speed);
+
 void setup() {
   FastLED.addLeds<LED_TYPE, DATA_PIN, COLOR_ORDER>(leds, NUM_LEDS);
-  FastLED.setBrightness(50); // Start at 20% brightness to avoid blinding
+  FastLED.setBrightness(50); // Start at 20% brightness
   FastLED.clear();
   FastLED.show();
 }
 
 void loop() {
   // Test 1: Red chase
-  for(int i = 0; i < NUM_LEDS; i++) {
+  for (int i = 0; i < NUM_LEDS; i++) {
     leds[i] = CRGB::Red;
     FastLED.show();
     delay(50);
@@ -26,7 +29,7 @@ void loop() {
   }
 
   // Test 2: Green chase
-  for(int i = 0; i < NUM_LEDS; i++) {
+  for (int i = 0; i < NUM_LEDS; i++) {
     leds[i] = CRGB::Green;
     FastLED.show();
     delay(50);
@@ -34,7 +37,7 @@ void loop() {
   }
 
   // Test 3: Blue chase
-  for(int i = 0; i < NUM_LEDS; i++) {
+  for (int i = 0; i < NUM_LEDS; i++) {
     leds[i] = CRGB::Blue;
     FastLED.show();
     delay(50);
@@ -47,14 +50,14 @@ void loop() {
 
 // Theater-style crawling lights
 void theaterChase(CRGB color, int speed) {
-  for(int j = 0; j < 10; j++) { // Repeat 10 cycles
-    for(int q = 0; q < 3; q++) {
-      for(int i = 0; i < NUM_LEDS; i += 3) {
+  for (int j = 0; j < 10; j++) { // Repeat 10 cycles
+    for (int q = 0; q < 3; q++) {
+      for (int i = 0; i < NUM_LEDS; i += 3) {
         leds[i + q] = color; // Turn every third LED on
       }
       FastLED.show();
       delay(speed);
-      for(int i = 0; i < NUM_LEDS; i += 3) {
+      for (int i = 0; i < NUM_LEDS; i += 3) {
         leds[i + q] = CRGB::Black; // Turn them off
       }
     }
