@@ -30,6 +30,7 @@ lib/
 libs/
 .pio/libdeps/
 node_modules/
+*.rsgc.on.ca.cer
 
 ### IDE ###
 .vscode/
