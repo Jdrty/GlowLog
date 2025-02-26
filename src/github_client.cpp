@@ -6,11 +6,10 @@
 #include <ESP8266WiFiMulti.h>
 ESP8266WiFiMulti wifiMulti;
 
-// API root for GitHub
-const char* GitHubClient::GITHUB_API_ROOT = "https://api.github.com/";
+const char* GitHubClient::GITHUB_API_HOST = "api.github.com";
+const int GitHubClient::HTTPS_PORT = 443;
 
 bool GitHubClient::initialize(const char* dummySSID, const char* dummyPass) {
-  // Add multiple networks
 #ifdef WIFI_SSID1
   wifiMulti.addAP(WIFI_SSID1, WIFI_PASS1);
 #endif
@@ -30,55 +29,55 @@ bool GitHubClient::fetchCommitData(uint8_t commits[32], const char* githubUserna
   if (!WiFi.isConnected()) return false;
 
   WiFiClientSecure client;
-  client.setInsecure(); // For testing
-  HTTPClient http;
-
-  // Configure client timeouts
-  client.setTimeout(10000);
-  http.setReuse(false);
-  http.setTimeout(10000);
-
-  // Build the request URL using the provided GitHub username
-  String url = String(GITHUB_API_ROOT) + "users/" + String(githubUsername) + "/events";
-  http.begin(client, url);
-  http.addHeader("Authorization", "Bearer " + String(githubPAT));
-  http.addHeader("User-Agent", "GlowLog");
-  http.addHeader("Accept", "application/vnd.github+json");
-
-  // Execute the GET request
-  int httpCode = http.GET();
-  if (httpCode != HTTP_CODE_OK) {
-    http.end();
+  client.setInsecure();
+  
+  if (!client.connect(GITHUB_API_HOST, HTTPS_PORT)) {
     return false;
   }
-
-  // Parse JSON from response
+  
+  String path = String("/users/") + String(githubUsername) + "/events";
+  
+  client.print(String("GET ") + path + " HTTP/1.1\r\n" +
+               "Host: " + GITHUB_API_HOST + "\r\n" +
+               "Authorization: Bearer " + githubPAT + "\r\n" +
+               "User-Agent: GlowLog\r\n" +
+               "Accept: application/vnd.github+json\r\n" +
+               "Connection: close\r\n\r\n");
+  
+  unsigned long timeout = millis();
+  while (client.available() == 0) {
+    if (millis() - timeout > 10000) {
+      client.stop();
+      return false;
+    }
+  }
+  
+  char endOfHeaders[] = "\r\n\r\n";
+  if (!client.find(endOfHeaders)) {
+    client.stop();
+    return false;
+  }
+  
   DynamicJsonDocument doc(8192);
-  DeserializationError error = deserializeJson(doc, http.getString());
-  http.end();
-
+  DeserializationError error = deserializeJson(doc, client);
+  client.stop();
+  
   if (error) return false;
-
-  // Reset commit counts for the 32-day array
+  
   memset(commits, 0, 32);
-
-  // Process each event in the returned JSON array
+  
   for (JsonObject event : doc.as<JsonArray>()) {
-    // Only consider PushEvents
     if (String((const char*)event["type"]) != "PushEvent") continue;
-
-    // Get the event's timestamp and convert it
+    
     const char* createdAt = event["created_at"];
     time_t eventTime = TimeUtils::parseISO8601(createdAt);
     
-    // Calculate how many days ago (0 = today, 31 = 31 days ago)
     int daysAgo = TimeUtils::getDaysAgo(eventTime);
     if (daysAgo < 0 || daysAgo >= 32) continue;
-
-    // Sum the number of commits for that day
+    
     int count = event["payload"]["size"];
     commits[daysAgo] += count;
   }
-
+  
   return true;
 }
