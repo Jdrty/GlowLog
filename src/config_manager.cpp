@@ -1,7 +1,7 @@
 #include "config_manager.h"
 #include <string.h>
 
-#define EEPROM_SIZE 128  // Allocate enough EEPROM space for the config struct
+#define EEPROM_SIZE 128  // Enough EEPROM space for the config struct
 
 // Load configuration from EEPROM; if invalid, use default credentials
 void ConfigManager::loadConfig() {

@@ -9,7 +9,7 @@
 
 CRGB leds[NUM_LEDS];
 
-// Theater-style crawling lights function declaration
+// Testing lights
 void theaterChase(CRGB color, int speed);
 
 void setup() {
@@ -20,7 +20,7 @@ void setup() {
 }
 
 void loop() {
-  // Test 1: Red chase
+  // Test 1
   for (int i = 0; i < NUM_LEDS; i++) {
     leds[i] = CRGB::Red;
     FastLED.show();
@@ -28,7 +28,7 @@ void loop() {
     leds[i] = CRGB::Black;
   }
 
-  // Test 2: Green chase
+  // Test 2
   for (int i = 0; i < NUM_LEDS; i++) {
     leds[i] = CRGB::Green;
     FastLED.show();
@@ -36,7 +36,7 @@ void loop() {
     leds[i] = CRGB::Black;
   }
 
-  // Test 3: Blue chase
+  // Test 3
   for (int i = 0; i < NUM_LEDS; i++) {
     leds[i] = CRGB::Blue;
     FastLED.show();
@@ -44,11 +44,11 @@ void loop() {
     leds[i] = CRGB::Black;
   }
 
-  // Test 4: White theater chase
+  // Test 4
   theaterChase(CRGB::White, 50);
 }
 
-// Theater-style crawling lights
+// Response and stability test
 void theaterChase(CRGB color, int speed) {
   for (int j = 0; j < 10; j++) { // Repeat 10 cycles
     for (int q = 0; q < 3; q++) {
