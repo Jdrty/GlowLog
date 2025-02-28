@@ -1,3 +1,5 @@
+// src/led_driver.cpp
+
 #include "led_driver.h"
 
 // Initialize the WS2812B LED strip
@@ -19,14 +21,13 @@ void LedDriver::displayCommits(const uint8_t commits[]) {
     if (commits[i] == 0) {
       leds[i] = CRGB::Black;
     } else {
-      // Use the normalized brightness value for a white LED
       leds[i] = CRGB(commits[i], commits[i], commits[i]);
     }
   }
   FastLED.show();
 }
 
-// A simple test pattern: cycle blue across each LED
+// Test pattern
 void LedDriver::testPattern() {
   for (int i = 0; i < NUM_LEDS; i++) {
     leds[i] = CRGB::Blue;

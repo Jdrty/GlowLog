@@ -1,3 +1,5 @@
+// src/config_manager.cpp
+
 #include "config_manager.h"
 #include <string.h>
 
@@ -9,7 +11,7 @@ void ConfigManager::loadConfig() {
   EEPROM.get(0, config);
   // Check if config appears uninitialized (first byte empty or 0xFF)
   if (config.wifiSSID[0] == '\0' || config.wifiSSID[0] == 0xFF) {
-    // Use .env macros if defined, else fallback to hardcoded defaults
+    // Use .env macros if defined, else fallback to defaults
 #ifdef WIFI_SSID
     strncpy(config.wifiSSID, WIFI_SSID, sizeof(config.wifiSSID));
 #else

@@ -1,3 +1,5 @@
+// src/commit_mapper.cpp
+
 #include "commit_mapper.h"
 
 // Define brightness levels (not currently used directly, but kept for reference)
