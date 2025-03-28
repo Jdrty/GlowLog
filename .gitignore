@@ -56,3 +56,9 @@ lerna-debug.log*
 *.bin
 *.eep
 *.elf
+
+## Personal JSON stuff ##
+/tests/gittest/commits.json
+
+## Other ##
+/tests/gittest/github_user_commits

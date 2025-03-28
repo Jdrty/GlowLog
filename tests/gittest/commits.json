@@ -1,0 +1,576 @@
+[
+  {
+    "hash": "e101dc8ddcab8100c3dc8789b800afe409f6e70a",
+    "date": "2025-03-13",
+    "repo": "Jdrty/xPowerXSolver",
+    "author": "Julian Darou-Santos",
+    "message": "Added script"
+  },
+  {
+    "hash": "3c9d4c6a5a0ce68e369678e9e69415258d73ebe5",
+    "date": "2025-02-28",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Added comments labeling each script for my presentation"
+  },
+  {
+    "hash": "768ddefe41f41fa84be01e66b6e7d7b0c73bfced",
+    "date": "2025-02-27",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Finished main arduino script, reworked some comments, reworked formatting in some scripts"
+  },
+  {
+    "hash": "4091347fa735aadb479112656d710dab8f43c5dd",
+    "date": "2025-02-26",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Fixed bugs with git client, will adapt other scripts later"
+  },
+  {
+    "hash": "fe2c2eba9377c5796c6ea12ade26452c6bd5d2db",
+    "date": "2025-02-26",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Reworked gitclient for a future change"
+  },
+  {
+    "hash": "0c09d6a5e4a6c63af0adecb78efa8d235bdb2d81",
+    "date": "2025-02-20",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Added licesne"
+  },
+  {
+    "hash": "b153b1e66b777b7dc2cc7ab1f3cc251ab9b372d2",
+    "date": "2025-02-14",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Added more comments on code, reworked tests and main arduino script for the other git changes"
+  },
+  {
+    "hash": "7473a68914ab391d0d016d733574150541571f2f",
+    "date": "2025-02-14",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Added config for github for future changes"
+  },
+  {
+    "hash": "d854ff6d4652058be142224f4548e7724a7fb4dc",
+    "date": "2025-02-14",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Wrote LED driver script and made it work with the git commits"
+  },
+  {
+    "hash": "28252ba5eb51028c14137dfb4dbff5245cbc0a2c",
+    "date": "2025-02-14",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Wrote confit manager for wifi and PAT"
+  },
+  {
+    "hash": "5f9481b2c5bf1ec86bb0f217d18bbb07a9f6d979",
+    "date": "2025-02-13",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Added reference to commit mapper"
+  },
+  {
+    "hash": "205cfe0449b6de3b6ec443a045921e2147046147",
+    "date": "2025-02-13",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "updated .h files to match project goals"
+  },
+  {
+    "hash": "bd9130a5fa91e34593dc373009e68405b61ce1eb",
+    "date": "2025-02-12",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Added multiple wifi networks"
+  },
+  {
+    "hash": "7f8fa0a022723f825e6a05b59875b6d75a85eb8f",
+    "date": "2025-02-12",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Configured .ini for .env"
+  },
+  {
+    "hash": "b6c4e948c0caba1a46413527cc1e7db3571f3b2c",
+    "date": "2025-02-12",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Fixed all the scripts"
+  },
+  {
+    "hash": "58a0aa3359ea056d0a0b20a084d2e38d12d9d5ec",
+    "date": "2025-02-09",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Made files and skeleton based on roadmap"
+  },
+  {
+    "hash": "a660dffe02fc5c8af462a3a93bd73851cf6b5d9e",
+    "date": "2025-02-09",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Merge branch 'main' of github.com:Jdrty/GlowLog\nNeed to fix broken files"
+  },
+  {
+    "hash": "8fc36a1b06d003c493c45c791e0911ae64bd5803",
+    "date": "2025-02-09",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Made gitignore work for the future"
+  },
+  {
+    "hash": "fb5366e656ebfb7701f0751dd48e966790adb55c",
+    "date": "2025-02-09",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Setup pio and include scripts"
+  },
+  {
+    "hash": "2cd2d3e3fa82906b9643999d045d28b7db661a62",
+    "date": "2025-02-06",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Removed .env from tracking"
+  },
+  {
+    "hash": "f004a734ba97075ed68c7a509247b719f87a4391",
+    "date": "2025-02-06",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Update .gitignore with .env"
+  },
+  {
+    "hash": "00b4106ad50d0a6dba55285f8a2b9570d1ddc2aa",
+    "date": "2025-02-06",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Finished removing private files"
+  },
+  {
+    "hash": "bc8fee16cc61aae3960d063cc14b8aa499488cb5",
+    "date": "2025-02-06",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Added gitignore"
+  },
+  {
+    "hash": "d1b29e9649d0f1e3bea4b8c9d928352802f39117",
+    "date": "2025-02-06",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Delete .env (not needed)"
+  },
+  {
+    "hash": "0d2cf0a16aecab58066d3c6efec8cdc63f5bf424",
+    "date": "2025-02-04",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Added a simple script to test that LEDs work"
+  },
+  {
+    "hash": "e0eb76335f5fa4621ec32e9de52ac9d99f127b9a",
+    "date": "2025-02-04",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "added empty tests"
+  },
+  {
+    "hash": "d10f4428336cc4408a18f89ca3d001ee3755b13f",
+    "date": "2025-01-28",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Added empty Arduino script"
+  },
+  {
+    "hash": "353486ffe17e542171766e5fad07eddad0003294",
+    "date": "2025-01-28",
+    "repo": "Jdrty/GlowLog",
+    "author": "Julian Darou-Santos",
+    "message": "Initial commit"
+  },
+  {
+    "hash": "6bc7114a73813bfa41ad3041ecdd8981b33e02a4",
+    "date": "2025-01-16",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Redid a bit of code, added clear board feature, fixed animations overlapping"
+  },
+  {
+    "hash": "6bc7114a73813bfa41ad3041ecdd8981b33e02a4",
+    "date": "2025-01-16",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Redid a bit of code, added clear board feature, fixed animations overlapping"
+  },
+  {
+    "hash": "834f7d122ef22ae691f94853375b8dfd2ee7a0a6",
+    "date": "2025-01-13",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "renamed arduino script, refactored arduino script"
+  },
+  {
+    "hash": "834f7d122ef22ae691f94853375b8dfd2ee7a0a6",
+    "date": "2025-01-13",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "renamed arduino script, refactored arduino script"
+  },
+  {
+    "hash": "53563fe08b8d6f1e71ca0078329210e89ae9d571",
+    "date": "2025-01-11",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Added brightness slider based on previous commit, doesn't work sometimes."
+  },
+  {
+    "hash": "53563fe08b8d6f1e71ca0078329210e89ae9d571",
+    "date": "2025-01-11",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Added brightness slider based on previous commit, doesn't work sometimes."
+  },
+  {
+    "hash": "ff423e7f66c7c60691a94485fb9e704cf99db7d6",
+    "date": "2025-01-10",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Added comments for test scripts (forgot lol)"
+  },
+  {
+    "hash": "ff423e7f66c7c60691a94485fb9e704cf99db7d6",
+    "date": "2025-01-10",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Added comments for test scripts (forgot lol)"
+  },
+  {
+    "hash": "6fb424a2bbb7f4ba33dd6025bd6becc97eefd0a0",
+    "date": "2025-01-10",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Fixed brightness by making rows stay lit longer, credit to Mr. Darcy for finding this"
+  },
+  {
+    "hash": "6fb424a2bbb7f4ba33dd6025bd6becc97eefd0a0",
+    "date": "2025-01-10",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Fixed brightness by making rows stay lit longer, credit to Mr. Darcy for finding this"
+  },
+  {
+    "hash": "f6f907993048666be51a82b8a06ebc0f3bad9e53",
+    "date": "2025-01-08",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Added more detailed comments for sumbission"
+  },
+  {
+    "hash": "3817ec18a2e314cacc53c514501f719f6fc16ea1",
+    "date": "2025-01-08",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Finalized Comments"
+  },
+  {
+    "hash": "f6f907993048666be51a82b8a06ebc0f3bad9e53",
+    "date": "2025-01-08",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Added more detailed comments for sumbission"
+  },
+  {
+    "hash": "3817ec18a2e314cacc53c514501f719f6fc16ea1",
+    "date": "2025-01-08",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Finalized Comments"
+  },
+  {
+    "hash": "7923bf99c2e476e72dd4cbc0e0c5bba11f4dee2c",
+    "date": "2025-01-01",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Made the readme look nicer"
+  },
+  {
+    "hash": "cbfdd36b3abab8f1a74a53a9d3ed5f76836cfe62",
+    "date": "2025-01-01",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Completed readme"
+  },
+  {
+    "hash": "f7ffb7496e80077898ee4c2b70a4df87c5aa0214",
+    "date": "2025-01-01",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "finalized some things, fixed saving"
+  },
+  {
+    "hash": "f7ffb7496e80077898ee4c2b70a4df87c5aa0214",
+    "date": "2025-01-01",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "finalized some things, fixed saving"
+  },
+  {
+    "hash": "cbfdd36b3abab8f1a74a53a9d3ed5f76836cfe62",
+    "date": "2025-01-01",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Completed readme"
+  },
+  {
+    "hash": "7923bf99c2e476e72dd4cbc0e0c5bba11f4dee2c",
+    "date": "2025-01-01",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Made the readme look nicer"
+  },
+  {
+    "hash": "f2eed5488b16fff0df875c1afae680b5788028eb",
+    "date": "2024-12-31",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "added comments on the rest of the code"
+  },
+  {
+    "hash": "f96687eb201cb827c0bbf8924cffe8ce70734224",
+    "date": "2024-12-31",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "added comments on the arduino script"
+  },
+  {
+    "hash": "db192db3894997f3a2a527693f33307a9e0db593",
+    "date": "2024-12-31",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "reworked code base, removed unnecessary features, fixed bugs, made the ui look nicer"
+  },
+  {
+    "hash": "db192db3894997f3a2a527693f33307a9e0db593",
+    "date": "2024-12-31",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "reworked code base, removed unnecessary features, fixed bugs, made the ui look nicer"
+  },
+  {
+    "hash": "f96687eb201cb827c0bbf8924cffe8ce70734224",
+    "date": "2024-12-31",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "added comments on the arduino script"
+  },
+  {
+    "hash": "f2eed5488b16fff0df875c1afae680b5788028eb",
+    "date": "2024-12-31",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "added comments on the rest of the code"
+  },
+  {
+    "hash": "09a98fcc9539d597f182d25d8a960d7f5d8efbce",
+    "date": "2024-12-17",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Added sensitive files to gitignore"
+  },
+  {
+    "hash": "09a98fcc9539d597f182d25d8a960d7f5d8efbce",
+    "date": "2024-12-17",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Added sensitive files to gitignore"
+  },
+  {
+    "hash": "f995945b9c2715a86d65fdcd6bd56ef9dc3308eb",
+    "date": "2024-12-16",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Added AI feedback loop to verify Matrix"
+  },
+  {
+    "hash": "f995945b9c2715a86d65fdcd6bd56ef9dc3308eb",
+    "date": "2024-12-16",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Added AI feedback loop to verify Matrix"
+  },
+  {
+    "hash": "267f8659ae14ed017d2d1feb456a05c7106a3599",
+    "date": "2024-12-08",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Optimized codebase"
+  },
+  {
+    "hash": "267f8659ae14ed017d2d1feb456a05c7106a3599",
+    "date": "2024-12-08",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Optimized codebase"
+  },
+  {
+    "hash": "4cf218065b4f760032bd74d220be66f1ac95459a",
+    "date": "2024-12-07",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Revised prompt, added optimize pattern with AI function, optimized prompt generation"
+  },
+  {
+    "hash": "085fbb777ebd0f3c7c501e711ebf7343bdba0779",
+    "date": "2024-12-07",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Fixed loading animations not working without first prompting the ai"
+  },
+  {
+    "hash": "2fffde456e0b2f56d95ef93826c992a4340f3729",
+    "date": "2024-12-07",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "added a mood function and fixed a few bugs relating to animation displaying, the ai will try to draw patterns/animations that reflect a mood, will scale with eventual color changing"
+  },
+  {
+    "hash": "2c2b21440f0d49eecbaafe8f886dff8701091731",
+    "date": "2024-12-07",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Added to gitignore"
+  },
+  {
+    "hash": "5a20ea4dfb8fe119463ad9880aff4999d3af9bee",
+    "date": "2024-12-07",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Fixed gitignore (typo)"
+  },
+  {
+    "hash": "5a20ea4dfb8fe119463ad9880aff4999d3af9bee",
+    "date": "2024-12-07",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Fixed gitignore (typo)"
+  },
+  {
+    "hash": "2c2b21440f0d49eecbaafe8f886dff8701091731",
+    "date": "2024-12-07",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Added to gitignore"
+  },
+  {
+    "hash": "2fffde456e0b2f56d95ef93826c992a4340f3729",
+    "date": "2024-12-07",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "added a mood function and fixed a few bugs relating to animation displaying, the ai will try to draw patterns/animations that reflect a mood, will scale with eventual color changing"
+  },
+  {
+    "hash": "085fbb777ebd0f3c7c501e711ebf7343bdba0779",
+    "date": "2024-12-07",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Fixed loading animations not working without first prompting the ai"
+  },
+  {
+    "hash": "4cf218065b4f760032bd74d220be66f1ac95459a",
+    "date": "2024-12-07",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Revised prompt, added optimize pattern with AI function, optimized prompt generation"
+  },
+  {
+    "hash": "4075b4156bdae5dfc320469d31ae2c02383ed3e3",
+    "date": "2024-12-06",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Fixed animations not previewing properly and remodeled a majority of the codebase"
+  },
+  {
+    "hash": "4075b4156bdae5dfc320469d31ae2c02383ed3e3",
+    "date": "2024-12-06",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Fixed animations not previewing properly and remodeled a majority of the codebase"
+  },
+  {
+    "hash": "8cbf155a4f11baf2308805cee6b91a6cac50782e",
+    "date": "2024-12-05",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Add local project files to Matrix_AI repository"
+  },
+  {
+    "hash": "9de323b549bf158156d3d21a96c9f3df2417740d",
+    "date": "2024-12-05",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Add .gitignore to exclude .env files"
+  },
+  {
+    "hash": "78ce387c13b06e1ead2d9993c1075eece8c2f703",
+    "date": "2024-12-05",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Update readme with setup steps and future plans"
+  },
+  {
+    "hash": "fa79dfb91b3e719ad8faab78ec81675f9008b3d6",
+    "date": "2024-12-05",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Wrote project overview for Long_ISP"
+  },
+  {
+    "hash": "78ce387c13b06e1ead2d9993c1075eece8c2f703",
+    "date": "2024-12-05",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Update readme with setup steps and future plans"
+  },
+  {
+    "hash": "9de323b549bf158156d3d21a96c9f3df2417740d",
+    "date": "2024-12-05",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Add .gitignore to exclude .env files"
+  },
+  {
+    "hash": "8cbf155a4f11baf2308805cee6b91a6cac50782e",
+    "date": "2024-12-05",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Add local project files to Matrix_AI repository"
+  },
+  {
+    "hash": "fa79dfb91b3e719ad8faab78ec81675f9008b3d6",
+    "date": "2024-12-05",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Wrote project overview for Long_ISP"
+  },
+  {
+    "hash": "ed904d06ce4c7dcb16919ae43f4305915f21147e",
+    "date": "2024-12-05",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Initial commit"
+  },
+  {
+    "hash": "ed904d06ce4c7dcb16919ae43f4305915f21147e",
+    "date": "2024-12-05",
+    "repo": "Jdrty/LumaLinkAI",
+    "author": "Julian Darou-Santos",
+    "message": "Initial commit"
+  }
+]
