@@ -11,45 +11,46 @@
 #define DEBUG_OUTPUT 1
 #define TEST_ALL_LEDS 1
 
-// Put ur own stuff. Not commiting secrets like last time lol
-const char* ssid1 = "wifi1";
+const char* ssid1 = "ssid1";
 const char* password1 = "pass1";
-const char* ssid2 = "wifi2";
+const char* ssid2 = "ssid2";
 const char* password2 = "pass2";
 const char* githubToken = "PAT";
-const char* username = "";
+const char* username = "user";
 const char* host = "api.github.com";
 const int httpsPort = 443;
 
+// Initialize NeoPixel library
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN_NEOPIXEL, NEO_RGB + NEO_KHZ800);
 
 const uint32_t COLORS[] = {
   pixels.Color(0, 0, 0),       // Level 0: Off/black for no commits
   pixels.Color(5, 25, 10),     // Level 1: Very light green (1-2 commits)
   pixels.Color(10, 50, 20),    // Level 2: Light green (3-5 commits)
-  pixels.Color(15, 75, 30),    // Level 3: Medium green (6-10 commits)
+  pixels.Color(65, 75, 30),    // Level 3: Medium green (6-10 commits)
   pixels.Color(20, 100, 40)    // Level 4: Dark green (10+ commits)
 };
 
 void setup() {
   Serial.begin(115200);
-  Serial.println("Starting up");
+  Serial.println("Starting up - 4 STICKS");
   delay(1000);
   
   pixels.begin();
   pixels.clear();
   pixels.setBrightness(20);
   
+  // Test individual LEDs
   pixels.clear();
   pixels.show();
   Serial.println("Testing LEDs");
-  for (int i = 0; i < NUMPIXELS; i++) {
+  for (int i = 0; i < 32; i++) {
     pixels.clear();
     pixels.setPixelColor(i, pixels.Color(0, 20, 0));
     pixels.show();
     Serial.print("LED #");
     Serial.println(i);
-    delay(500);
+    delay(200);
   }
   
   pixels.clear();
@@ -108,21 +109,21 @@ void testAllLeds() {
 }
 
 void loop() {
-  int commitCounts[8] = {0};
+  int commitCounts[32] = {0};
   
   // Blue loading animation
-  for (int i = 0; i < 8; i++) {
+  for (int i = 0; i < 32; i++) {
     pixels.clear();
     pixels.setPixelColor(i, pixels.Color(0, 0, 10));
     pixels.show();
-    delay(100);
+    delay(50);
   }
   pixels.clear();
   pixels.show();
   
   if (fetchCommitData(commitCounts)) {
     bool hasCommits = false;
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < 32; i++) {
       if (commitCounts[i] > 0) {
         hasCommits = true;
         break;
@@ -131,6 +132,7 @@ void loop() {
     
     if (!hasCommits) {
       Serial.println("No commits, using test data");
+      // First stick (days 0-7)
       commitCounts[0] = 5;
       commitCounts[1] = 2;  
       commitCounts[2] = 0;
@@ -139,6 +141,36 @@ void loop() {
       commitCounts[5] = 1;
       commitCounts[6] = 0;
       commitCounts[7] = 4;
+      
+      // Second stick (days 8-15)
+      commitCounts[8] = 2;
+      commitCounts[9] = 6;  
+      commitCounts[10] = 1;
+      commitCounts[11] = 0;
+      commitCounts[12] = 3;
+      commitCounts[13] = 5;
+      commitCounts[14] = 0;
+      commitCounts[15] = 1;
+      
+      // Third stick (days 16-23)
+      commitCounts[16] = 0;
+      commitCounts[17] = 4;  
+      commitCounts[18] = 2;
+      commitCounts[19] = 5;
+      commitCounts[20] = 0;
+      commitCounts[21] = 3;
+      commitCounts[22] = 1;
+      commitCounts[23] = 0;
+      
+      // Fourth stick (days 24-31)
+      commitCounts[24] = 3;
+      commitCounts[25] = 0;  
+      commitCounts[26] = 1;
+      commitCounts[27] = 0;
+      commitCounts[28] = 4;
+      commitCounts[29] = 2;
+      commitCounts[30] = 0;
+      commitCounts[31] = 5;
     }
     
     displayHeatmap(commitCounts);
@@ -251,7 +283,7 @@ void setupWifi() {
 }
 
 bool fetchCommitData(int* commitCounts) {
-  for (int i = 0; i < 8; i++) {
+  for (int i = 0; i < 32; i++) {
     commitCounts[i] = 0;
   }
   
@@ -304,7 +336,7 @@ bool fetchCommitData(int* commitCounts) {
       count++;
       
       // Try to find repo name
-      int repoStart = payload.lastIndexOf("\"name\":\"", index);
+      int repoStart = payload.lastIndexOf("\"name\":\"", index)
       if (repoStart != -1) {
         repoStart += 8;
         int repoEnd = payload.indexOf("\"", repoStart);
@@ -355,10 +387,34 @@ bool fetchCommitData(int* commitCounts) {
     Serial.println(" PushEvents");
     
     if (count > 0) {
+      // Distribute commit counts across 32 days
+      // Recent days (First stick - days 0-7)
       commitCounts[0] = count;
-      commitCounts[2] = count / 2;
-      commitCounts[4] = count / 3;
-      commitCounts[7] = count / 2;
+      commitCounts[1] = count / 2;
+      commitCounts[2] = count / 3;
+      commitCounts[4] = count / 2;
+      commitCounts[7] = count / 3;
+      
+      // Second stick (days 8-15)
+      commitCounts[8] = count / 4;
+      commitCounts[9] = count / 2;
+      commitCounts[11] = count / 4;
+      commitCounts[13] = count / 3;
+      commitCounts[15] = count / 4;
+      
+      // Third stick (days 16-23)
+      commitCounts[16] = count / 5;
+      commitCounts[18] = count / 4;
+      commitCounts[19] = count / 3;
+      commitCounts[21] = count / 5;
+      commitCounts[23] = count / 4;
+      
+      // Fourth stick (days 24-31)
+      commitCounts[24] = count / 6;
+      commitCounts[26] = count / 5;
+      commitCounts[28] = count / 4;
+      commitCounts[29] = count / 5;
+      commitCounts[31] = count / 6;
     }
     
     return true;
@@ -455,7 +511,7 @@ bool parseCommitData(String payload, int* commitCounts) {
         }
       }
       
-      // Move to the next object
+      // Next object
       insideEvent = false;
       pos = objectEnd + 1;
     } else {
@@ -500,7 +556,7 @@ void displayHeatmap(int* commitCounts) {
   pixels.clear();
   Serial.println("LED colors:");
   
-  for (int i = 0; i < 8; i++) {
+  for (int i = 0; i < 32; i++) {
     if (commitCounts[i] < 0 || commitCounts[i] > 1000) {
       Serial.print("Bad count ");
       Serial.println(commitCounts[i]);
@@ -550,7 +606,7 @@ int getColorLevel(int commits) {
 void displayErrorState() {
   // Flash green 3 times to indicate error
   for (int j = 0; j < 3; j++) {
-    for (int i = 0; i < NUMPIXELS; i++) {
+    for (int i = 0; i < 32; i++) {
       pixels.setPixelColor(i, pixels.Color(0, 20, 0));
     }
     pixels.show();
