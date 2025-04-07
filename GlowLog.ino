@@ -1,3 +1,12 @@
+// PROJECT  :GlowLog
+// PURPOSE  :To display the last 32 days of Git commits on physicals LEDs
+// COURSE   :ICD3O
+// AUTHOR   :Julian Darou-Santos
+// DATE     :2025 Apr 6
+// MCU      :ESP8266
+// STATUS   :Working
+// REFERENCE:DER.Mock http://darcy.rsgc.on.ca/ACES/TEL3M/2324/images/BicolorLED23.png
+
 #include <time.h>
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
@@ -21,14 +30,15 @@ const char* host = "api.github.com";
 const int httpsPort = 443;
 
 // Initialize NeoPixel library
+// Try NEO_RGB instead of NEO_GRB as this might be the issue with white LEDs
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN_NEOPIXEL, NEO_RGB + NEO_KHZ800);
 
 const uint32_t COLORS[] = {
   pixels.Color(0, 0, 0),       // Level 0: Off/black for no commits
-  pixels.Color(5, 25, 10),     // Level 1: Very light green (1-2 commits)
-  pixels.Color(10, 50, 20),    // Level 2: Light green (3-5 commits)
-  pixels.Color(65, 75, 30),    // Level 3: Medium green (6-10 commits)
-  pixels.Color(20, 100, 40)    // Level 4: Dark green (10+ commits)
+  pixels.Color(0, 15, 0),      // Level 1: Very light green (1-3 commits)
+  pixels.Color(0, 60, 0),      // Level 2: Medium green (4-8 commits)
+  pixels.Color(0, 120, 0),     // Level 3: Bright green (8-12 commits)
+  pixels.Color(0, 255, 0)      // Level 4: Maximum brightness green (12+ commits)
 };
 
 void setup() {
@@ -336,7 +346,7 @@ bool fetchCommitData(int* commitCounts) {
       count++;
       
       // Try to find repo name
-      int repoStart = payload.lastIndexOf("\"name\":\"", index)
+      int repoStart = payload.lastIndexOf("\"name\":\"", index);
       if (repoStart != -1) {
         repoStart += 8;
         int repoEnd = payload.indexOf("\"", repoStart);
@@ -511,7 +521,7 @@ bool parseCommitData(String payload, int* commitCounts) {
         }
       }
       
-      // Next object
+      // Move to the next object
       insideEvent = false;
       pos = objectEnd + 1;
     } else {
@@ -580,13 +590,13 @@ void displayHeatmap(int* commitCounts) {
         pixels.setPixelColor(i, pixels.Color(0, 15, 0));
         break;
       case 2:
-        pixels.setPixelColor(i, pixels.Color(0, 30, 0));
+        pixels.setPixelColor(i, pixels.Color(0, 60, 0));
         break;
       case 3:
-        pixels.setPixelColor(i, pixels.Color(0, 45, 0));
+        pixels.setPixelColor(i, pixels.Color(0, 120, 0));
         break;
       case 4:
-        pixels.setPixelColor(i, pixels.Color(0, 60, 0));
+        pixels.setPixelColor(i, pixels.Color(0, 255, 0));
         break;
     }
   }
@@ -597,9 +607,9 @@ void displayHeatmap(int* commitCounts) {
 
 int getColorLevel(int commits) {
   if (commits == 0) return 0;
-  else if (commits <= 2) return 1;
-  else if (commits <= 3) return 2;
-  else if (commits <= 4) return 3;
+  else if (commits <= 3) return 1;
+  else if (commits <= 8) return 2;
+  else if (commits <= 12) return 3;
   else return 4;
 }
 
