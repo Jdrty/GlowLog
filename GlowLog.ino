@@ -30,7 +30,6 @@ const char* host = "api.github.com";
 const int httpsPort = 443;
 
 // Initialize NeoPixel library
-// Try NEO_RGB instead of NEO_GRB as this might be the issue with white LEDs
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN_NEOPIXEL, NEO_RGB + NEO_KHZ800);
 
 const uint32_t COLORS[] = {
